@@ -1,0 +1,22 @@
+//
+//  WeatherData.swift
+//  SpyWeather
+//
+//  Created by Giorgi Samkharadze on 23.10.22.
+//
+
+import Foundation
+
+struct WeatherData: Codable {
+    let name: String
+    let main: Main
+    let weather: [Weather]
+}
+
+struct Main: Codable {
+    let temp: Double
+}
+
+struct Weather: Codable {
+    let id: Int
+}

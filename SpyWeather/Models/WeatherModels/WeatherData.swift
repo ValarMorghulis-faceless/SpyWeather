@@ -22,6 +22,6 @@ struct Weather: Codable {
     let id: Int
 }
 struct Coord: Codable {
-    let lon: CLLocationDegrees
-    let lat: CLLocationDegrees
+    let lon: Double
+    let lat: Double
 }

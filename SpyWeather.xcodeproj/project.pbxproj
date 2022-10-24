@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0AF8272906DED4003B4F1F /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0AF8262906DED4003B4F1F /* TimeModel.swift */; };
 		0FC7B5E229046B7700D3F856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E129046B7700D3F856 /* AppDelegate.swift */; };
 		0FC7B5E429046B7700D3F856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E329046B7700D3F856 /* SceneDelegate.swift */; };
 		0FC7B5E629046B7700D3F856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E529046B7700D3F856 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0AF8262906DED4003B4F1F /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		0FC7B5DE29046B7700D3F856 /* SpyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC7B5E129046B7700D3F856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC7B5E329046B7700D3F856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				0FC7B6022905C97600D3F856 /* TimeManager.swift */,
 				0FC7B6042905C9B100D3F856 /* TimeData.swift */,
+				0F0AF8262906DED4003B4F1F /* TimeModel.swift */,
 			);
 			path = TimeModels;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				0FC7B6052905C9B100D3F856 /* TimeData.swift in Sources */,
 				0FC7B5E229046B7700D3F856 /* AppDelegate.swift in Sources */,
 				0FC7B5FB2904870C00D3F856 /* WeatherManager.swift in Sources */,
+				0F0AF8272906DED4003B4F1F /* TimeModel.swift in Sources */,
 				0FC7B5FF2904952E00D3F856 /* WeatherModel.swift in Sources */,
 				0FC7B5E429046B7700D3F856 /* SceneDelegate.swift in Sources */,
 				0FC7B5FD2904947300D3F856 /* WeatherData.swift in Sources */,

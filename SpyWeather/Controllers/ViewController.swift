@@ -10,15 +10,17 @@ import CoreLocation
 
 class ViewController: UIViewController{
 
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var searchTextField: UITextField!
     var weatherManager = WeatherManager()
+    var timeManager = TimeManager()
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timeManager.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -30,16 +32,34 @@ class ViewController: UIViewController{
         locationManager.requestLocation()
     }
 }
+var hours1 = 0
 
+extension ViewController: UITextFieldDelegate, WeatherManagerDelegate , TimeManagerDelegate{
 
-extension ViewController: UITextFieldDelegate, WeatherManagerDelegate {
+    func didUpdateTime(_ timeManager: TimeManager, time2: TimeModel) {
+        DispatchQueue.main.async {
+            self.timeLabel.text = time2.time
+        }
+        hours1 = time2.hours
+    }
+    
+    func didFailWithError1(error: Error) {
+        print(error)
+    }
+    
+    
+    
+    
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
-            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.conditionImageView.image = UIImage(systemName: weather.getImage(hours: hours1))
             self.cityLabel.text = weather.cityName
         }
         print(weather.temperatureString)
+        print(weather.latitude)
+        print(weather.longitude)
+        timeManager.getTime(for: weather.latitude, for: weather.longitude)
     }
     
     func didFailWithError(error: Error) {

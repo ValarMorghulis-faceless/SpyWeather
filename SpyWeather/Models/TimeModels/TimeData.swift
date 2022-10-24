@@ -9,4 +9,6 @@ import Foundation
 
 struct TimeData: Codable {
     let time: String
+    
+    
 }

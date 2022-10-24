@@ -8,20 +8,13 @@
 import Foundation
 import CoreLocation
 
-class WeatherModel {
-    var conditionId: Int = 1
-    var cityName: String = "sasd"
-    var temperature: Double = 2.34
-    var longitude: CLLocationDegrees = 2.31
-    var latitude: CLLocationDegrees = 4.123
+struct WeatherModel {
+    var conditionId: Int
+    var cityName: String
+    var temperature: Double
+    var longitude: Double
+    var latitude: Double
     
-    init(conditionId: Int, cityName: String,temperature: Double,longitude: CLLocationDegrees,  latitude: CLLocationDegrees) {
-        self.conditionId = conditionId
-        self.cityName = cityName
-        self.temperature = temperature
-        self.longitude = longitude
-        self.latitude = latitude
-    }
     
     
     var temperatureString: String {
@@ -47,6 +40,26 @@ class WeatherModel {
                     return "cloud"
                 }
     }
-
+    func getImage(hours: Int) -> String {
+        
+        if conditionId > 200 && conditionId < 232 && hours > 6 && hours < 18 {
+            return "cloud.bolt"
+        } else if conditionId > 200 && conditionId < 232 && hours < 6 || hours > 18 {
+            return "cloud.moon.bolt"
+        } else if conditionId > 300 && conditionId < 321 && hours > 6 && hours < 18 {
+            return "cloud.drizzle"
+        } else if conditionId > 300 && conditionId < 321 && hours < 6 || hours > 18 {
+            return "cloud.moon.rain"
+        } else if conditionId > 500 && conditionId < 531 && hours > 6 && hours < 18 {
+            return "cloud.rain"
+        }else if conditionId > 500 && conditionId < 531 && hours < 6 || hours > 18 {
+            return "cloud.moon.rain"
+        } else {
+            return "cloud"
+        }
+        
+        
+        
+    }
 }
 

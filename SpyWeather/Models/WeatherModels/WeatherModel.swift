@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 struct WeatherModel {
+    var descriptioninfo: String
     var conditionId: Int
     var cityName: String
     var temperature: Double
@@ -20,40 +21,55 @@ struct WeatherModel {
     var temperatureString: String {
         return String(format: "%.1f", temperature)
     }
-    var conditionName: String {
-        switch conditionId {
-                case 200...232:
-                    return "cloud.bolt"
-                case 300...321:
-                    return "cloud.drizzle"
-                case 500...531:
-                    return "cloud.rain"
-                case 600...622:
-                    return "cloud.snow"
-                case 701...781:
-                    return "cloud.fog"
-                case 800:
-                    return "sun.max"
-                case 801...804:
-                    return "cloud.bolt"
-                default:
-                    return "cloud"
-                }
-    }
+    
+//    var conditionName: String {
+//        switch conditionId {
+//                case 200...232:
+//                    return "cloud.bolt"
+//                case 300...321:
+//                    return "cloud.drizzle"
+//                case 500...531:
+//                    return "cloud.rain"
+//                case 600...622:
+//                    return "cloud.snow"
+//                case 701...781:
+//                    return "cloud.fog"
+//                case 800:
+//                    return "sun.max"
+//                case 801...804:
+//                    return "cloud.bolt"
+//                default:
+//                    return "cloud"
+//                }
+//    }
     func getImage(hours: Int) -> String {
         
-        if conditionId > 200 && conditionId < 232 && hours > 6 && hours < 18 {
+        
+        
+        if conditionId >= 200 && conditionId <= 232 && hours > 6 && hours < 18 {
             return "cloud.bolt"
-        } else if conditionId > 200 && conditionId < 232 && hours < 6 || hours > 18 {
+        } else if conditionId >= 200 && conditionId <= 232 && hours > 18 {
             return "cloud.moon.bolt"
-        } else if conditionId > 300 && conditionId < 321 && hours > 6 && hours < 18 {
+        } else if conditionId >= 300 && conditionId <= 321 && hours > 6 && hours < 18 {
             return "cloud.drizzle"
-        } else if conditionId > 300 && conditionId < 321 && hours < 6 || hours > 18 {
+        } else if conditionId >= 300 && conditionId <= 321 && hours > 18 {
             return "cloud.moon.rain"
-        } else if conditionId > 500 && conditionId < 531 && hours > 6 && hours < 18 {
+        } else if conditionId >= 500 && conditionId <= 531 && hours > 6 && hours < 18 {
             return "cloud.rain"
-        }else if conditionId > 500 && conditionId < 531 && hours < 6 || hours > 18 {
+        }else if conditionId >= 500 && conditionId <= 531 && hours > 18 {
             return "cloud.moon.rain"
+        } else if conditionId >= 600 && conditionId <= 622 && hours > 6 && hours < 18 {
+            return "cloud.snow"
+        }else if conditionId >= 600 && conditionId <= 622 && hours > 18 {
+            return "cloud.moon.rain.fill"
+        }else if conditionId >= 701 && conditionId <= 781 && hours > 6 && hours < 18 {
+            return "cloud.fog"
+        }else if conditionId >= 701 && conditionId <= 781 && hours > 18 {
+            return "cloud.moon.fill"
+        } else if conditionId == 800  && hours > 6 && hours < 18 {
+            return "sun.max"
+        }else if conditionId  == 800 && hours > 18 {
+            return "moon"
         } else {
             return "cloud"
         }

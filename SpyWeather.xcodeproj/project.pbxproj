@@ -10,7 +10,7 @@
 		0F0AF8272906DED4003B4F1F /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0AF8262906DED4003B4F1F /* TimeModel.swift */; };
 		0FC7B5E229046B7700D3F856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E129046B7700D3F856 /* AppDelegate.swift */; };
 		0FC7B5E429046B7700D3F856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E329046B7700D3F856 /* SceneDelegate.swift */; };
-		0FC7B5E629046B7700D3F856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E529046B7700D3F856 /* ViewController.swift */; };
+		0FC7B5E629046B7700D3F856 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E529046B7700D3F856 /* WeatherViewController.swift */; };
 		0FC7B5E929046B7700D3F856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC7B5E729046B7700D3F856 /* Main.storyboard */; };
 		0FC7B5EC29046B7700D3F856 /* SpyWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7B5EA29046B7700D3F856 /* SpyWeather.xcdatamodeld */; };
 		0FC7B5EE29046B7900D3F856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC7B5ED29046B7900D3F856 /* Assets.xcassets */; };
@@ -27,7 +27,7 @@
 		0FC7B5DE29046B7700D3F856 /* SpyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC7B5E129046B7700D3F856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC7B5E329046B7700D3F856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0FC7B5E529046B7700D3F856 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FC7B5E529046B7700D3F856 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		0FC7B5E829046B7700D3F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FC7B5EB29046B7700D3F856 /* SpyWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpyWeather.xcdatamodel; sourceTree = "<group>"; };
 		0FC7B5ED29046B7900D3F856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		0FC7B5F9290486F200D3F856 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0FC7B5E529046B7700D3F856 /* ViewController.swift */,
+				0FC7B5E529046B7700D3F856 /* WeatherViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FC7B5E629046B7700D3F856 /* ViewController.swift in Sources */,
+				0FC7B5E629046B7700D3F856 /* WeatherViewController.swift in Sources */,
 				0FC7B6052905C9B100D3F856 /* TimeData.swift in Sources */,
 				0FC7B5E229046B7700D3F856 /* AppDelegate.swift in Sources */,
 				0FC7B5FB2904870C00D3F856 /* WeatherManager.swift in Sources */,
@@ -347,6 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK4UBWJ2G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpyWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -374,6 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MK4UBWJ2G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpyWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

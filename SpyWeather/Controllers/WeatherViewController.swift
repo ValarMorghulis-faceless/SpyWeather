@@ -8,8 +8,10 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController{
+class WeatherViewController: UIViewController{
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeinfoLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -34,7 +36,7 @@ class ViewController: UIViewController{
 }
 var hours1 = 0
 
-extension ViewController: UITextFieldDelegate, WeatherManagerDelegate , TimeManagerDelegate{
+extension WeatherViewController: UITextFieldDelegate, WeatherManagerDelegate , TimeManagerDelegate{
 
     func didUpdateTime(_ timeManager: TimeManager, time2: TimeModel) {
         DispatchQueue.main.async {
@@ -55,7 +57,11 @@ extension ViewController: UITextFieldDelegate, WeatherManagerDelegate , TimeMana
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.getImage(hours: hours1))
             self.cityLabel.text = weather.cityName
+            self.timeinfoLabel.text = "Current Time in \(weather.cityName)"
+            self.descriptionLabel.text = weather.descriptioninfo
         }
+
+        print(weather.conditionId)
         print(weather.temperatureString)
         print(weather.latitude)
         print(weather.longitude)
@@ -89,7 +95,7 @@ extension ViewController: UITextFieldDelegate, WeatherManagerDelegate , TimeMana
         }
     }
 }
-extension ViewController: CLLocationManagerDelegate {
+extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
